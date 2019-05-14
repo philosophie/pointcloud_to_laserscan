@@ -225,7 +225,8 @@ void PointCloudToLaserScanNodelet::cloudCb(const sensor_msgs::PointCloud2ConstPt
     }
   }
   pub_.publish(clear);
-
+  // nanoseconds
+  ros::Duration(0, 100000000).sleep();
   pub_.publish(output);
 }
 }  // namespace pointcloud_to_laserscan
